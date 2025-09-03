@@ -82,10 +82,10 @@
               "buildTarget": "suzlon:build:production"
             },
             "development": {
-              "buildTarget": "suzlon:build:development"
+              "buildTarget": "suzlon:build:production"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "production"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
