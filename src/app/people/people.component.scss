@@ -1,0 +1,49 @@
+.tabButtonGroup {
+    .tabButton {
+        cursor: pointer;
+        padding: 15px 28px;
+        position: relative;
+
+        h2 {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all .4s;
+            text-align: center;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 4px;
+            margin: 0 auto;
+            background: var(--primary);
+            transition: all 0.3s;
+        }
+
+        &.active {
+            h2 {
+                color: var(--text-white);
+            }
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+table.customeTable tbody tr td h3 {
+    img {
+        width: 25px;
+    }
+
+    &.disabled {
+        color: var(--text-light);
+    }
+}

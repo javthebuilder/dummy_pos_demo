@@ -1,0 +1,154 @@
+.sidenav {
+    background: var(--bg-color);
+
+    .pageTitle {
+        h1 {
+            cursor: pointer;
+            width: fit-content;
+            margin: 0 auto;
+
+            i {
+                min-width: 33px;
+            }
+        }
+    }
+
+
+    form {
+        .upload {
+            width: calc(100% - 10px);
+            height: 110px;
+            position: relative;
+            background: var(--primary);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            input {
+                position: absolute;
+                z-index: 99;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+
+            h2 {
+                margin: 0;
+                color: var(--text-white);
+                font-weight: 400;
+                font-size: 0.85rem;
+                text-align: center;
+                width: 100%;
+
+                i {
+                    font-size: 2.2rem;
+                    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
+                    padding-bottom: 13px;
+                }
+            }
+
+            &.video {
+                background: var(--bg-white);
+
+                h2 {
+                    color: var(--text-light);
+
+                    i {
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card {
+    background: var(--bg-secondary);
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+
+    .pageTitle {
+        h1 {
+            small {
+                font-size: .8rem;
+                color: var(--text-light);
+                padding-top: 8px;
+            }
+        }
+
+    }
+
+    form {
+        .form-group {
+            label {
+                color: var(--text-light);
+                font-weight: 500;
+            }
+
+            textarea,
+            input {
+                font-weight: 400;
+            }
+
+            textarea {
+                line-height: 24px;
+            }
+        }
+
+        .ingredients {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            span {
+                font-size: 0.95rem;
+                color: var(--text-white);
+                font-weight: 400;
+                padding: 8px 15px;
+                display: flex;
+                align-items: center;
+
+                i {
+                    color: #ff4141;
+                    display: block;
+                    font-size: 1.0rem;
+                    min-width: 24px;
+                    cursor: pointer;
+                }
+
+            }
+        }
+
+        .input_box {
+            &.addMoreButton {
+                cursor: pointer;
+                border: 1px solid var(--primary);
+
+                h3 {
+                    margin: 0;
+                    color: var(--primary);
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    padding: 10px 15px;
+                }
+            }
+        }
+    }
+}
+
+.itemStock {
+    background: #97979717;
+
+    h2 {
+        color: var(--text-white);
+        margin: 0;
+        font-size: 1.0rem;
+    }
+}

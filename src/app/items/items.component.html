@@ -1,0 +1,863 @@
+<div class="body_wrapper">
+    <div class="container-fluid p-0 row g-0 nowrap">
+        <div class="col-12 col-md-4 col-lg-4 col-xl-3 sidenav">
+            <div class="tabButtonGroup px-3 px-md-0">
+                <div class="row g-0">
+                    <div class="col-6 col-md-12">
+                        <div class="tabButton" (click)="showFoodItemList()" [ngClass]="foodItemList ? 'active' : '' ">
+                            <h2>{{'food_item' | translate}}</h2>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-12">
+                        <div class="tabButton" (click)="showCategoriesList()"
+                            [ngClass]="categoriesList ? 'active' : '' ">
+                            <h2>{{'categories' | translate}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-8 col-xl-9 main_content">
+            <div class="p-3 p-md-4">
+                <div class="" *ngIf="foodItemList">
+                    <div class="pageTitle pb-4">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-7 col-xl-7 pb-3 pb-md-0 d-flex align-items-center">
+                                <h1> {{'food_item' | translate}} </h1>
+
+                                <button class="btn rounded-pill mx-3" type="button" (click)="add_item()">
+                                    {{'add_new' | translate}}
+                                </button>
+                            </div>
+
+                            <div class=" col-12 col-md-5 col-xl-5 pb-2 pb-md-0">
+                                <div class="row g-3 align-items-center me-2">
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-8  end">
+                                        <form>
+                                            <div class="form-group search_box">
+                                                <div class="input_box d-flex align-items-center mb-0">
+                                                    <i class="material-symbols-rounded">
+                                                        search
+                                                    </i>
+                                                    <input type="search" class="form-control"
+                                                        placeholder="{{'search_item' | translate}}">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card tableCard">
+                        <div class="p-x-0">
+                            <div class="scroll-x">
+                                <table class="table customeTable align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-start"> {{'code' | translate}} </th>
+                                            <th scope="col" class="text-start">{{'item_name' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'category' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'option' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'price' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'sales' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'action' | translate}}</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-start">
+                                                <h3 style="color: var(--text-light);">
+                                                    18754
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Cheese Burst Sandwich
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Fast Food
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    3
+                                                    <i class="material-symbols-sharp text-end">
+                                                        list
+                                                    </i>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $12.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    112
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            visibility
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff9138;">
+                                                            image
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-start">
+                                                <h3 style="color: var(--text-light);">
+                                                    18755
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Red Source Pasta
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Fast Food
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    2
+                                                    <i class="material-symbols-sharp text-end">
+                                                        list
+                                                    </i>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $11.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    214
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            visibility
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff9138;">
+                                                            image
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-start">
+                                                <h3 style="color: var(--text-light);">
+                                                    18756
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Sugar Free Coke
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Beverages
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    4
+                                                    <i class="material-symbols-sharp text-end">
+                                                        list
+                                                    </i>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $15.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    98
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            visibility
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff9138;">
+                                                            image
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-start">
+                                                <h3 style="color: var(--text-light);">
+                                                    18578
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Hamm Burger
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Fast Food
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    2
+                                                    <i class="material-symbols-sharp text-end">
+                                                        list
+                                                    </i>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $20.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    221
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            visibility
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff9138;">
+                                                            image
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-start">
+                                                <h3 style="color: var(--text-light);">
+                                                    18759
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Rosted Chicken Legs
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Main Course
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    0
+                                                    <i class="material-symbols-sharp text-end">
+                                                        list
+                                                    </i>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $8.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    99
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            visibility
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff9138;">
+                                                            image
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-start">
+                                                <h3 style="color: var(--text-light);">
+                                                    18760
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3 class="d-flex disabled">
+                                                    <i class="material-symbols-rounded" style="font-size: 1.2rem;">
+                                                        visibility_Off
+                                                    </i>
+                                                    <strong>
+                                                        Rosted Chicken Legs
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Beverages
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    0
+                                                    <i class="material-symbols-sharp text-end">
+                                                        list
+                                                    </i>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $8.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    99
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            visibility
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff9138;">
+                                                            image
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="add_item()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="" *ngIf="categoriesList">
+                    <div class="pageTitle pb-4">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-7 col-xl-7 pb-3 pb-md-0 d-flex align-items-center">
+                                <h1> {{'categories' | translate}} </h1>
+
+                                <button class="btn rounded-pill mx-3" type="button" (click)="addCategory()">
+                                    {{'add_new' | translate}}
+                                </button>
+                            </div>
+
+                            <div class=" col-12 col-md-5 col-xl-5 pb-2 pb-md-0">
+                                <div class="row g-3 align-items-center me-2">
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-8  end">
+                                        <form>
+                                            <div class="form-group search_box">
+                                                <div class="input_box d-flex align-items-center mb-0">
+                                                    <i class="material-symbols-rounded">
+                                                        search
+                                                    </i>
+                                                    <input type="search" class="form-control"
+                                                        placeholder="{{'search_category' | translate}}">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card tableCard">
+                        <div class="p-x-0">
+                            <div class="scroll-x">
+                                <table class="table customeTable align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center"> {{'icon' | translate}} </th>
+                                            <th scope="col" class="text-start">{{'category_name' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'items_in_category' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'created_on' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'action' | translate}}</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_starter.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Starter
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    12
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_fastfood.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Fast Food 
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    28 
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm 
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_Dessert.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Dessert 
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    18
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_Beverages.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Baverages 
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    23
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_maincourse.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Main Course 
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    35
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_fastfood.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Fast Food 
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    26
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_Dessert.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Dessert 
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    19
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    <img src="assets/images/categories/ic_starter.png">
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Starter
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    12
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 style="color: var(--text-light);">
+                                                    12 June 2020 12:30 pm
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addCategory()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination-container">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-12 col-md-12 col-lg-4 pb-3">
+                            <h2 class="mx-auto mx-lg-0"> {{'showing' | translate}}
+                                1 {{'to' | translate}} 10 {{'of' | translate}} 126
+                                {{'itemss' | translate}}
+                            </h2>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-8 pb-3">
+                            <div class="row align-items-center">
+                                <form class="col-12 col-md-6 col-lg-8 d-flex pb-3 pb-md-0 ms-lg-auto">
+                                    <div class="form-group d-flex align-items-center mb-0 mx-auto m-md-0 ms-lg-auto">
+                                        <h2> {{'items_per_page' | translate}} </h2>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <ng-select [(ngModel)]="itemsPerPage" [ngModelOptions]="{standalone: true}">
+                                            <ng-option valur="10">10</ng-option>
+                                            <ng-option valur="15">15</ng-option>
+                                            <ng-option valur="20">20</ng-option>
+                                            <ng-option valur="20">25</ng-option>
+                                            <ng-option valur="30">30</ng-option>
+                                        </ng-select>
+                                    </div>
+                                </form>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <nav class="navigation" aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-end mb-0 mx-auto m-md-0 ms-lg-auto">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i
+                                                        class="zmdi zmdi-chevron-left"></i></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"><i
+                                                        class="zmdi zmdi-chevron-right"></i></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

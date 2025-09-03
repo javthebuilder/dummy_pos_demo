@@ -1,0 +1,55 @@
+<div class="modelContainer">
+    <div class="modelContent">
+        
+        <div class="pageTitle p-4 ">
+            <h1 class="d-flex pt-2 pb-3">
+                {{'add_category' | translate}}
+            </h1>
+        </div>
+
+        <form class="pt-0 p-4">
+            <div class="form_inner">
+                <div class="form-group animate__animated animate__fadeInUp d-sm-flex align-items-start">
+                    <div class="upload">
+                        <input type="file" class="form-control">
+                        <h2>
+                            <i class="material-symbols-outlined ion-text-center">
+                                Panorama
+                            </i>
+                            {{'upload_icon' | translate}}
+                        </h2>
+                    </div>
+
+                    <p class="d-flex pt-3 pt-sm-0">
+                        <i class="zmdi zmdi-info-outline"></i>
+                        <span innerHTML="{{'upload_icon_text' | translate}}"></span>
+                    </p>
+                </div>
+
+
+                <div class="form-group animate__animated animate__fadeInUp ">
+                    <label>{{'add_category' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <input type="name" class="form-control" placeholder="{{'enter_category_name' | translate}}"
+                            value="Italian Food">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modelFooter">
+        <div class="row g-0">
+            <div class="col-6">
+                <button class="btn btn-lg  rounded-0 w-100" type="button" style="background: #ff4141 !important;" (click)="dismiss()">
+                    {{'cancel' | translate}}
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-lg  rounded-0 w-100" type="button">
+                    {{'add_category' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="custome_container">
+    <section class="container">
+        <div class="card p-4 mt-5">
+            <div class="pageTitle pt-1 pb-4">
+                <h1 class="px-0">
+                    {{'select_language' | translate}}
+                </h1>
+            </div>
+
+
+            <form name="addresses">
+                <div class="form-group">
+                    <ul>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-lg-3" *ngFor="let language of languages">
+                                <li class="animate__animated animate__fadeInUp">
+                                    <div class="form-check radio">
+                                        <input class="form-check-input" type="radio"
+                                            [ngModelOptions]="{standalone:true}" [id]="language.code"
+                                            [value]="language.code" [(ngModel)]="defaultLanguageCode"
+                                            name="choosen_language">
+                                        <label class="form-check-label" [for]="language.code">
+                                            <div class="text_box">
+                                                <h2 class="d-flex">
+                                                    {{language.name}}
+                                                </h2>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </form>
+
+            <button class="btn btn-lg col-12 col-md-6 col-lg-3 mx-auto" (click)="languageConfirm()">
+                {{'apply' | translate}}
+            </button>
+        </div>
+    </section>
+</div>

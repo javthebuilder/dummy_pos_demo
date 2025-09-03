@@ -1,0 +1,174 @@
+/*
+ 
+=================================================
+      RTL Styling Code
+=================================================
+*/
+.rtl,
+[dir="rtl"] {
+    direction: rtl;
+
+    .end {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .text-end {
+        text-align: left !important;
+    }
+
+    .text-start {
+        text-align: right !important;
+    }
+
+    header {
+        .navbar .navbar-nav .nav-item.profile_img {
+            padding-right: 30px !important;
+            padding-left: 0 !important;
+        }
+    }
+
+    .owl-carousel,
+    .bx-wrapper {
+        direction: ltr;
+    }
+
+    .owl-carousel .owl-item {
+        direction: rtl;
+    }
+
+    form {
+        .form-group {
+            input {
+                &[type="tel"] {
+                    text-align: right !important;
+                }
+            }
+
+            .input_box select {
+                margin-right: 0px !important;
+                margin-left: 15px !important;
+                padding-left: 0px !important;
+                padding-right: 15px;
+                background-position-x: left !important;
+            }
+
+            .form-check {
+                padding-left: 25px !important;
+                padding-right: 0px !important;
+
+                input.form-check-input {
+                    left: 0 !important;
+                    right: unset !important;
+                }
+            }
+        }
+    }
+
+    header .navbar .navbar-nav {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    @media (min-width: 768px) {
+        .sidenav {
+            margin-right: 0 !important;
+            margin-left: 15px !important;
+        }
+
+    }
+
+    app-transactions,
+    app-people,
+    app-items {
+        .tabButtonGroup .tabButton::after {
+            left: unset !important;
+            right: 0 !important;
+        }
+    }
+
+    app-settings,
+    app-add-category {
+        form .form-group .upload {
+            margin-right: 0px !important;
+            margin-left: 20px !important;
+        }
+    }
+
+    app-dashboard {
+        .card.topSellingItems .media .img_box {
+            margin-right: 0px !important;
+            margin-left: 15px !important;
+        }
+    }
+
+    app-home {
+        .itemContainer .item_row .item.active {
+            &::after {
+                background: linear-gradient(23deg, #09e96f 15%, rgba(125, 185, 232, 0) 100%) !important;
+            }
+        }
+    }
+
+    header .right-side-menu {
+        right: unset !important;
+        left: -100% !important;
+
+        .menu-inner {
+            right: unset !important;
+            left: 0 !important;
+        }
+
+        &.active {
+            left: 0 !important;
+        }
+
+    }
+
+    ngb-modal-window {
+        &.sideModel {
+            .modal-dialog .modal-content {
+                right: unset !important;
+                left: -100% !important;
+            }
+
+            &.show {
+                .modal-dialog .modal-content {
+                    left: 0 !important;
+                }
+            }
+        }
+    }
+
+
+    ngb-modal-window {
+        &.sideModel {
+            .modal-dialog {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+
+                .modal-content {
+                    right: unset !important;
+                    left: -100%;
+                }
+            }
+
+            &.show {
+                .modal-dialog .modal-content {
+                    right: unset !important;
+                    left: 0;
+                }
+            }
+
+            &.accountModel {
+                &.show {
+                    .modal-dialog .modal-content {
+                        left: 10px !important;
+                    }
+
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,145 @@
+<header *ngIf="showHeader" [ngClass]="toggleClass ? 'active' : '' ">
+    <nav class="navbar navbar-expand-md px-0  px-lg-3">
+        <div class="container-fluid d-flex align-items-center" style="flex-wrap: nowrap;">
+            <div class="nav-item ml-lg-2 ml-xl-0 logo" style="min-width: fit-content;">
+                <a class="navbar-brand nav-link px-0" [ngClass]="menuActive == 'dashboard' ? 'active' : ''"
+                    (click)="dashboard('dashboard')">
+                    <img src="assets/images/logo.png" class="img-fluid">
+                </a>
+            </div>
+
+
+            <div class="navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav d-flex align-items-center w-100">
+
+                    <li class="nav-item d-none d-xl-block" (click)="home('home')"
+                        [ngClass]="menuActive == 'home' ? 'active' : ''">
+                        <a class="nav-link">
+                            <i class="zmdi zmdi-assignment"></i> {{'pos' | translate}}
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-xl-block" (click)="items('items')"
+                        [ngClass]="menuActive == 'items' ? 'active' : ''">
+                        <a class="nav-link">
+                            <i class="zmdi zmdi-cutlery"></i> {{'items' | translate}}</a>
+                    </li>
+                    <li class="nav-item d-none d-xl-block" (click)="people('people')"
+                        [ngClass]="menuActive == 'people' ? 'active' : ''">
+                        <a class="nav-link">
+                            <i class="zmdi zmdi-accounts"></i> {{'people' | translate}}</a>
+                    </li>
+                    <li class="nav-item d-none d-xl-block" (click)="transactions('transactions')"
+                        [ngClass]="menuActive == 'transactions' ? 'active' : ''">
+                        <a class="nav-link">
+                            <i class="zmdi zmdi-collection-text"></i> {{'sale_expense' | translate}}</a>
+                    </li>
+
+                    <li class="nav-item d-none d-xl-block" (click)="setting('setting')"
+                        [ngClass]="menuActive == 'setting' ? 'active' : ''">
+                        <a class="nav-link">
+                            <i class="zmdi zmdi-settings"></i> {{'settings' | translate}}</a>
+                    </li>
+
+                    <li class="nav-item d-none d-xl-block" (click)="orders_status('orders_status')"
+                        [ngClass]="menuActive == 'orders_status' ? 'active' : ''">
+                        <a class="nav-link">
+                            <i class="zmdi zmdi-hourglass-alt"></i> {{'order_status' | translate}}</a>
+                    </li>
+
+                    <li class="nav-item profile_img ml-auto" type="button" (click)="showRightMenu()">
+                        <div class="dropdown">
+                            <span>
+                                <i class="zmdi zmdi-menu"></i>
+                            </span>
+
+                            <a class="img_box center_img">
+                                <img src="assets/images/profile.png" class="crop_img">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="right-side-menu" [ngClass]="toggleClass ? 'active' : '' ">
+        <div class="menu-inner">
+            <ul class="align-items-center w-100">
+
+                <li class="nav-item d-xl-none" (click)="home('home')" [ngClass]="menuActive == 'home' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-assignment"></i> {{'pos' | translate}}
+                    </a>
+                </li>
+                <li class="nav-item d-xl-none" (click)="items('items')"
+                    [ngClass]="menuActive == 'items' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-cutlery"></i> {{'items' | translate}}</a>
+                </li>
+                <li class="nav-item d-xl-none" (click)="people('people')"
+                    [ngClass]="menuActive == 'people' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-accounts"></i> {{'people' | translate}}</a>
+                </li>
+                <li class="nav-item d-xl-none" (click)="transactions('transactions')"
+                    [ngClass]="menuActive == 'transactions' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-collection-text"></i> {{'sale_expense' | translate}}</a>
+                </li>
+
+                <li class="nav-item d-xl-none" (click)="setting('setting')"
+                    [ngClass]="menuActive == 'setting' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-settings"></i> {{'settings' | translate}}</a>
+                </li>
+
+                <li class="nav-item d-xl-none" (click)="orders_status('orders_status')"
+                    [ngClass]="menuActive == 'orders_status' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-hourglass-alt"></i> {{'order_status' | translate}}</a>
+                </li>
+
+
+                <!-- <li class="nav-item" (click)="reviews('reviews')" [ngClass]="menuActive == 'reviews' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-star"></i> {{'ratings' | translate}}
+                    </a>
+                </li>
+                <li class="nav-item" (click)="authentication('authentication')"
+                    [ngClass]="menuActive == 'authentication' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-shield-check"></i> {{'authentication' | translate}}
+                    </a>
+                </li> -->
+                <li class="nav-item" (click)="change_language('change_language')"
+                    [ngClass]="menuActive == 'change_language' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-globe"></i> {{'change_language' | translate}}
+                    </a>
+                </li>
+                <!-- <li class="nav-item" (click)="support('support')" [ngClass]="menuActive == 'support' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-email"></i> {{'support' | translate}}
+                    </a>
+                </li>
+                <li class="nav-item" (click)="terms_conditions('terms_conditions')"
+                    [ngClass]="menuActive == 'terms_conditions' ? 'active' : ''">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-assignment"></i> {{'terms_conditions' | translate}}
+                    </a>
+                </li> -->
+                <li class="nav-item" (click)=" login()">
+                    <a class="nav-link">
+                        <i class="zmdi zmdi-open-in-new"></i> {{'logout' | translate}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div *ngIf="showHeader" class="header_spacebar"></div>
+<!-- Header End -->
+
+<router-outlet />

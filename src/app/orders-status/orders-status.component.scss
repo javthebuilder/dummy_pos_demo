@@ -1,0 +1,118 @@
+.order_container {
+    padding: 12px 0px;
+    column-count: 1;
+    column-gap: 10px;
+
+    .order {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 25px;
+
+        .order_inner {
+            background: var(--bg-secondary);
+            position: relative;
+            width: 100%;
+            padding-bottom: 10px;
+
+            .order_header {
+                background: var(--primary);
+                color: var(--text-white);
+                padding: 15px;
+                margin-bottom: 15px;
+                align-items: flex-start;
+
+                h2 {
+                    margin: 0;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+
+                    span {
+                        display: block;
+                        font-weight: 500;
+                        font-size: 1.3rem;
+                    }
+                }
+
+                h3 {
+                    display: block;
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                }
+            }
+
+            .strike {
+                text-decoration: line-through;
+            }
+
+            .item {
+                color: var(--text-white);
+                display: flex;
+                align-items: flex-start;
+                padding: 7px 13px;
+                width: 100%;
+
+                h3 {
+                    margin: 0;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    min-width: 20px;
+                    line-height: 15px;
+                }
+
+                h4 {
+                    margin: 0;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
+                    width: 100%;
+
+                    span {
+                        display: block;
+                        padding-top: 2px;
+                        font-size: 0.65rem;
+                        font-weight: 400;
+                    }
+                }
+
+                &.order_done {
+                    text-decoration: line-through;
+                    color: var(--text-light);
+                    opacity: .5;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -14px;
+                left: 0;
+                width: 100%;
+                height: 14px;
+                background: url("../../assets/images/card_zigzag.png");
+                background-size: 209px;
+                background-repeat: no-repeat;
+                background-repeat: repeat-x;
+            }
+        }
+
+        &.active2 {
+            .order_inner {
+                .order_header {
+                    background: var(--yelow_color);
+                }
+            }
+        }
+
+        &.active1 {
+            .order_inner {
+                .order_header {
+                    background: var(--red_color);
+                }
+            }
+        }
+    }
+}

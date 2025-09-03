@@ -1,0 +1,234 @@
+ @media (min-width: 576px) {
+
+     app-login {
+         .main_container {
+             .card {
+                 min-width: 500px;
+                 max-width: 500px !important;
+             }
+         }
+     }
+ }
+
+ // Medium devices (tablets, 768px and up)
+ @media (min-width: 768px) {
+     app-orders-status {
+         .order_container {
+             column-count: 2 !important;
+         }
+     }
+
+     ngb-modal-window.sideModel .modal-dialog {
+         min-width: 500px;
+         width: 500px;
+     }
+
+     ngb-modal-window.sideModel {
+         &.recieptModel {
+             .modal-dialog {
+                 min-width: 320px !important;
+                 width: 320px !important;
+             }
+         }
+
+     }
+
+     .nowrap {
+         flex-wrap: nowrap !important;
+     }
+
+     .sidenav {
+         width: 30% !important;
+         position: sticky;
+         top: 0;
+         left: 0;
+         max-height: calc(100vh - 72px);
+         min-height: calc(100vh - 72px);
+         overflow: hidden;
+         overflow-y: auto;
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+         margin-right: 15px;
+     }
+
+     .main_content {
+         width: calc(70% - 15px) !important;
+         //  margin-left: 20%;
+     }
+
+     app-home {
+         .container-fluid {
+             overflow: hidden !important;
+         }
+
+         .sidenav {
+             width: 40% !important;
+             position: sticky;
+             top: 0;
+             left: 0;
+             max-height: calc(100vh - 72px - 0px);
+             min-height: calc(100vh - 72px - 0px);
+             overflow: hidden;
+             overflow-y: auto;
+
+
+             .cartCantent {
+                 max-height: calc(100vh - 72px - 16px - 40px);
+                 min-height: calc(100vh - 72px - 16px - 40px);
+                 overflow: hidden;
+                 overflow-y: auto;
+                 padding-bottom: 60px;
+             }
+         }
+
+         .main_content {
+             width: calc(60% - 16px) !important;
+             max-height: calc(100vh - 72px - 16px);
+             min-height: calc(100vh - 72px - 16px);
+             overflow: hidden;
+             overflow-y: auto;
+             padding-bottom: 40px;
+
+
+         }
+     }
+
+     app-transactions,
+     app-people,
+     app-items {
+         .tabButtonGroup {
+             .tabButton {
+                 h2 {
+                     text-align: justify !important;
+                 }
+
+                 &::after {
+                     width: 0 !important;
+                     height: 100% !important;
+                     right: unset !important;
+                 }
+
+                 &.active {
+                     &::after {
+                         width: 10px !important;
+                     }
+                 }
+             }
+         }
+     }
+
+     app-home {
+         .order-section {
+             position: relative;
+             min-height: calc(100vh - 72px - 15px);
+             max-height: calc(100vh - 72px - 15px);
+             overflow: hidden;
+
+             .orderFooter {
+                 position: absolute;
+                 bottom: 0;
+                 left: 0;
+                 width: 100%;
+             }
+         }
+     }
+ }
+
+ // Large devices (desktops, 992px and up)
+ @media (min-width: 992px) {
+     header .navbar .logo {
+         .navbar-brand {
+             max-width: 170px !important;
+
+             img {
+                 max-width: 170px !important;
+                 width: 170px !important;
+             }
+         }
+     }
+
+     app-orders-status {
+         .order_container {
+             column-count: 3 !important;
+         }
+     }
+
+
+     .sidenav {
+         width: 25% !important;
+     }
+
+     .main_content {
+         width: calc(75% - 15px) !important;
+         //  margin-left: 20%;
+     }
+
+ }
+
+ // X-Large devices (large desktops, 1200px and up)
+ @media (min-width: 1200px) {
+     app-orders-status {
+         .order_container {
+             column-count: 5 !important;
+         }
+     }
+
+     ngb-modal-window.sideModel .modal-dialog {
+         min-width: 500px;
+         width: 500px;
+     }
+
+     .sidenav {
+         width: 18% !important;
+     }
+
+     .main_content {
+         width: calc(82% - 15px) !important;
+         //  margin-left: 20%;
+     }
+
+     app-home {
+         .sidenav {
+             width: 35% !important;
+             position: sticky;
+             top: 0;
+             left: 0;
+             max-height: calc(100vh - 72px - 0px);
+             min-height: calc(100vh - 72px - 0px);
+             overflow: hidden;
+             overflow-y: auto;
+         }
+
+         .main_content {
+             width: calc(65% - 16px) !important;
+             //  max-height: calc(100vh - 72px - 30px);
+             //  min-height: calc(100vh - 72px - 30px);
+
+         }
+     }
+ }
+
+ // XX-Large devices (larger desktops, 1400px and up)
+ @media (min-width: 1400px) {
+     .container {
+         max-width: 1200px !important;
+     }
+
+     app-orders-status {
+         .order_container {
+             column-count: 5 !important;
+         }
+     }
+
+     .sidenav {
+         width: 16% !important;
+     }
+
+     .main_content {
+         width: calc(84% - 15px) !important;
+         //  margin-left: 20%;
+     }
+ }
+
+ // XX-Large devices (larger desktops, 1400px and up)
+ @media (min-width: 2000px) {}

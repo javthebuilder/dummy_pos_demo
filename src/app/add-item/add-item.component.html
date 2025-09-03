@@ -1,0 +1,261 @@
+<div class="body_wrapper">
+    <div class="container-fluid p-0 row g-0 nowrap">
+        <div class="col-12 col-md-4 col-lg-4 col-xl-3  p-4 sidenav m-0">
+            <div class="pageTitle pb-4">
+                <h1 class="d-flex pt-2" (click)="goBack()">
+                    <i class="material-symbols-outlined text-start">
+                        arrow_back
+                    </i>
+                    {{'back' | translate}}
+                </h1>
+            </div>
+
+            <form>
+                <div class="form-group mb-3">
+                    <div class="upload">
+                        <input type="file" class="form-control">
+                        <h2>
+                            <i class="material-symbols-outlined text-center">
+                                Panorama
+                            </i>
+                            {{'upload_item_image' | translate}}
+                        </h2>
+                    </div>
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <div class="upload video">
+                        <input type="file" class="form-control">
+                        <h2>
+                            <i class="material-symbols-outlined text-center">
+                                videocam
+                            </i>
+                            {{'upload_item_video' | translate}}
+                        </h2>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-8 col-xl-9 main_content">
+
+            <div class="row g-2">
+                <div class="col-12 col-xl-7">
+                    <div class="card p-4 mt-2">
+                        <div class="pageTitle pb-4">
+                            <h1 class="d-flex">
+                                {{'upload_an_item' | translate}}
+                            </h1>
+                        </div>
+
+                        <form class="p-0">
+                            <div class="form_inner">
+                                <div class="form-group animate__animated animate__fadeInUp ">
+                                    <label>{{'item_name' | translate}}</label>
+                                    <div class="input_box d-flex align-items-center">
+                                        <input type="name" class="form-control"
+                                            placeholder="{{'enter_item_name' | translate}}" value="Cream Pancake">
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 animate__animated animate__fadeInUp">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group ">
+                                            <label>{{'item_code' | translate}}</label>
+                                            <div class="input_box d-flex align-items-center">
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'enter_item_code' | translate}}" value="18762">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label>{{'item_price' | translate}} ({{'in' | translate}} $)</label>
+                                            <div class="input_box d-flex align-items-center">
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'enter_item_price' | translate}}" value="12.00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group select_box animate__animated animate__fadeInUp">
+                                    <label>{{'choose_item_category' | translate}}</label>
+                                    <div class="input_box d-flex align-items-center">
+                                        <ng-select [(ngModel)]="item_category"
+                                            placeholder="{{'choose_item_category' | translate}}"
+                                            [ngModelOptions]="{standalone: true}">
+                                            <ng-option value="1">
+                                                Starter
+                                            </ng-option>
+                                            <ng-option value="2">
+                                                Fast Food
+                                            </ng-option>
+                                            <ng-option value="3">
+                                                Dessert
+                                            </ng-option>
+                                            <ng-option value="4">
+                                                Baverages
+                                            </ng-option>
+                                            <ng-option value="5">
+                                                Main Course
+                                            </ng-option>
+                                        </ng-select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group animate__animated animate__fadeInUp ">
+                                    <label>{{'item_description' | translate}}</label>
+                                    <div class="input_box rounded-4">
+                                        <textarea rows="4" class="form-control py-3"
+                                            placeholder="{{'write_item_description' | translate}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,. </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group animate__animated animate__fadeInUp ">
+                                    <label>
+                                        {{'add_ingredients' | translate}} ({{'separated_by_commas' | translate}} )
+                                    </label>
+
+                                    <div class="input_box d-flex align-items-center mb-3">
+                                        <input type="text" class="form-control" [(ngModel)]="input"
+                                            (keydown)="handleInput($event)" placeholder="e.g. Sugar, Flour"
+                                            class="ingredient-input" [ngModelOptions]="{standalone: true}">
+                                    </div>
+
+
+                                    <div class="input_box rounded-4 ingredients">
+                                        <span *ngFor="let ingredient of ingredients; index as i">
+                                            {{ ingredient }}
+                                            <i class="zmdi zmdi-tag-close text-end" (click)="removeIngredient(i)"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row  g-3 animate__animated animate__fadeInUp">
+                                    <div class="col-12 col-md-4">
+                                        <div class="form-group ">
+                                            <label>{{'serving_for' | translate}}</label>
+                                            <div class="input_box d-flex align-items-center">
+                                                <ng-select [(ngModel)]="serving_for"
+                                                    placeholder="{{'serving_for' | translate}}"
+                                                    [ngModelOptions]="{standalone: true}">
+                                                    <ng-option value="1">
+                                                        1 {{'people' | translate}}
+                                                    </ng-option>
+                                                    <ng-option value="2">
+                                                        2 {{'people' | translate}}
+                                                    </ng-option>
+                                                    <ng-option value="3">
+                                                        3 {{'people' | translate}}
+                                                    </ng-option>
+                                                    <ng-option value="4">
+                                                        4 {{'people' | translate}}
+                                                    </ng-option>
+                                                    <ng-option value="5">
+                                                        5 {{'people' | translate}}
+                                                    </ng-option>
+                                                </ng-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="form-group ">
+                                            <label>{{'cook_time' | translate}} ({{'in' | translate}} min)</label>
+                                            <div class="input_box d-flex align-items-center">
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'cook_time' | translate}}" value="12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <div class="form-group ">
+                                            <label>{{'energy' | translate}} ({{'in' | translate}} kcal)</label>
+                                            <div class="input_box d-flex align-items-center">
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'enter_energy' | translate}}" value="227">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-5">
+                    <div class="card p-4 mt-2">
+                        <div class="pageTitle pb-4">
+                            <h1 class="d-flex">
+                                {{'add_option' | translate}}
+                                &nbsp;&nbsp;&nbsp;<small>({{'optional' | translate}})</small>
+                            </h1>
+                        </div>
+
+                        <form class="p-0">
+                            <div class="row g-3 animate__animated animate__fadeInUp">
+                                <div class="col-12 col-md-8">
+                                    <div class="form-group mb-3">
+                                        <label>{{'option' | translate}}</label>
+                                        <div class="input_box mb-3">
+                                            <input type="text" class="form-control"
+                                                placeholder="{{'add_option' | translate}}" value="Extra Cheese">
+                                        </div>
+
+                                        <div class="input_box mb-3">
+                                            <input type="text" class="form-control"
+                                                placeholder="{{'add_option' | translate}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group mb-3 text-end">
+                                        <label>{{'price' | translate}} ({{'in' | translate}} $)</label>
+                                        <div class="input_box  mb-3">
+                                            <input type="text" class="form-control text-end"
+                                                placeholder="{{'add_price' | translate}}" value="5">
+                                        </div>
+
+                                        <div class="input_box mb-3">
+                                            <input type="text" class="form-control text-end"
+                                                placeholder="{{'add_price' | translate}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row g-3 animate__animated animate__fadeInUp">
+                                <div class="col-12 col-md-8">
+                                    <div class="form-group ">
+                                        <div class="input_box addMoreButton">
+                                            <h3>+{{'add_more' | translate}}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card pt-xl-5">
+                        <div class="itemStock d-flex px-4 py-3">
+                            <h2>{{'item_in_stock' | translate}}</h2>
+
+                            <h2 class="end d-flex align-items-center" style="color: var(--primary);">{{'yes' |
+                                translate}}&nbsp;&nbsp;
+                                <ng-toggle class="end" [(ngModel)]="stockAvailibility"
+                                    [ngModelOptions]="{standalone: true}">
+                                </ng-toggle>
+                            </h2>
+                        </div>
+
+                        <button class="btn btn-lg  rounded-0 w-100" type="button">
+                            {{'upload_item' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

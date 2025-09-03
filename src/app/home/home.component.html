@@ -1,0 +1,798 @@
+<div class="body_wrapper">
+    <div class="container-fluid p-0 row g-0 nowrap">
+        <div class="col-12 sidenav mt-3">
+            <div class="order-section">
+
+                <div class="order-row d-flex">
+                    <div class="scroll-x">
+                        <div class="order">
+                            <h2>
+                                <span>1 &nbsp;</span>
+                                2:30
+                            </h2>
+                        </div>
+                        <div class="order active">
+                            <h2>
+                                <span>2 &nbsp;</span>
+                                0:42
+                            </h2>
+                        </div>
+                    </div>
+                    <h5 class="end">
+                        <span>
+                            +
+                        </span>
+                    </h5>
+                </div>
+                <div *ngIf="segment==1">
+                    <div class="cartCantent">
+                        <div class="tableRow">
+                            <table class="table customeTable align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-start itemName"> {{'item' | translate}} </th>
+                                        <th scope="col" class="text-start">{{'price' | translate}}</th>
+                                        <th scope="col" class="text-center">{{'qnt' | translate}}</th>
+                                        <th scope="col" class="text-start">{{'total' | translate}} ($)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="animate__animated animate__fadeInUp  ">
+                                        <td class="text-start itemName">
+                                            <h3>
+                                                Farm Ville Pizza
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $12.00
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                <p>
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <strong>1</strong>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </p>
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $12.00
+                                            </h3>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="animate__animated animate__fadeInUp  ">
+                                        <td class="text-start itemName">
+                                            <h3>
+                                                Cheese Burst Sandwich
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $8.00
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                <p>
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <strong>1</strong>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </p>
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $8.00
+                                            </h3>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="animate__animated animate__fadeInUp  ">
+                                        <td class="text-start itemName">
+                                            <h3>
+                                                White Source Pasta
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $10.00
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                <p>
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <strong>1</strong>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </p>
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $10.00
+                                            </h3>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="animate__animated animate__fadeInUp  ">
+                                        <td class="text-start itemName">
+                                            <h3>
+                                                Veg Cheese Burger
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $6.50
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                <p>
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <strong>2</strong>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </p>
+                                            </h3>
+                                        </td>
+                                        <td class="text-start">
+                                            <h3>
+                                                $13.00
+                                            </h3>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="payment_info">
+                            <h2 class="d-flex">
+                                {{'sub_total' | translate}}
+                                <span class="end">$43.00</span>
+                            </h2>
+                            <h2 class="d-flex">
+                                {{'tax' | translate}}
+                                <span class="end">$3.00</span>
+                            </h2>
+                            <h2 class="d-flex">
+                                {{'other_charge' | translate}}
+                                <span class="end">$0.00</span>
+                            </h2>
+                            <h2 class="d-flex amountToPay">
+                                {{'amount_to_pay' | translate}}
+                                <strong class="end">$46.00</strong>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="orderFooter">
+                        <div class="row g-0">
+                            <div class="col-6">
+                                <button class="btn btn-lg  rounded-0 w-100" type="button"
+                                    style="background: #ff4141 !important;">
+                                    {{'cancel' | translate}}
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-lg  rounded-0 w-100" type="button" (click)="showSectionButton(2)">
+                                    {{'place_order' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div *ngIf="segment==2">
+                    <div class="cartCantent">
+                        <div class="tableRow">
+                            <h5 class="px-4 py-2">
+                                {{'order_placed_successfully' | translate}} !!
+                            </h5>
+                            <form class="p-4">
+                                <div class="form_inner">
+                                    <div class="form-group animate__animated animate__fadeInUp">
+                                        <h2>{{'amount_to_pay' | translate}} <strong>$46.00</strong></h2>
+                                        <h3>{{'enter_below_information_for_customer_record' | translate}} </h3>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{'select_payment_method' | translate}}</label>
+                                        <div class="input_box d-flex align-items-center">
+                                            <ng-select [(ngModel)]="payment"
+                                                placeholder="{{'select_payment_method' | translate}}"
+                                                [ngModelOptions]="{standalone: true}">
+                                                <ng-option value="1">
+                                                    Cash
+                                                </ng-option>
+                                                <ng-option value="2">
+                                                    Online
+                                                </ng-option>
+                                            </ng-select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group animate__animated animate__fadeInUp">
+                                        <label>{{'customer_info' | translate}} ({{'optional' | translate}})</label>
+                                        <div class="input_box d-flex align-items-center mb-2">
+                                            <input type="name" class="form-control"
+                                                placeholder="{{'enter_full_name' | translate}}">
+                                        </div>
+                                        <div class="input_box d-flex align-items-center mb-2">
+                                            <input type="tel" class="form-control"
+                                                placeholder="{{'enter_phone_number' | translate}}">
+                                        </div>
+                                        <div class="input_box d-flex align-items-center mb-2">
+                                            <input type="email" class="form-control"
+                                                placeholder="{{'enter_email_address' | translate}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="orderFooter">
+                        <div class="row g-0">
+                            <div class="col-6">
+                                <button class="btn btn-lg  rounded-0 w-100" type="button"
+                                    style="background: #ff4141 !important;"  (click)="showSectionButton(1)">
+                                    {{'cancel' | translate}}
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-lg  rounded-0 w-100" type="button">
+                                    {{'payment' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 main_content mt-3">
+            <div class="categoryRow pb-3">
+                <owl-carousel-o [options]="categoryCarousel">
+                    <ng-template carouselSlide>
+                        <div class="category active">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_fastfood.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Fast Food
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_starter.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Starter
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_maincourse.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Main Cource
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_Beverages.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Beverages
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_Dessert.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Dessert
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_fastfood.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Fast Food
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_starter.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Starter
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="category">
+                            <div class="m-auto">
+                                <div class="img_box">
+                                    <img src="assets/images/categories/ic_maincourse.png" class="img-fluid">
+                                </div>
+                                <h3>
+                                    Main Cource
+                                </h3>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+
+            <div class="itemContainer">
+                <div class="pageTitle pb-4">
+                    <form class="">
+                        <div class="form-group search_box">
+                            <div class="input_box d-flex align-items-center mb-0">
+                                <i class="material-symbols-rounded text-start">
+                                    search
+                                </i>
+                                <input type="search" class="form-control" placeholder="{{'search_item' | translate}}">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="item_row px-2">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item active">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/1.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/2.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/3.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/4.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item active">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/5.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/6.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/7.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/8.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/9.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/1.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/2.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex active">
+                                    <i class="zmdi zmdi-minus-circle-outline"></i>
+                                    <h5 class="end">1</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/3.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item active">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/1.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/2.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item active">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/3.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/4.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/5.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/6.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/7.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/8.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/9.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/1.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Cream Pancake</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/2.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>White Source Pasta</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <div class="item">
+                                <div class="item_img center_img">
+                                    <img src="assets/images/food/3.png" class="crop_img">
+                                </div>
+                                <div class="text_box">
+                                    <h2>Farm Villa Pizza</h2>
+                                    <h3>$12.00</h3>
+                                </div>
+                                <div class="option d-flex">
+                                    <p class="d-flex">
+                                        <i class="zmdi zmdi-minus-circle-outline"></i>
+                                        <strong class="end">1</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

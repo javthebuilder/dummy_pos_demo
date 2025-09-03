@@ -1,0 +1,912 @@
+<div class="body_wrapper">
+    <div class="container-fluid p-0 row g-0 nowrap">
+        <div class="col-12 col-md-4 col-lg-4 col-xl-3 sidenav">
+            <div class="tabButtonGroup px-3 px-md-0">
+                <div class="row g-0">
+                    <div class="col-6 col-md-12">
+                        <div class="tabButton" (click)="showSalesList()" [ngClass]="salesList ? 'active' : '' ">
+                            <h2>{{'sales' | translate}}</h2>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-12">
+                        <div class="tabButton" (click)="showExpenseList()" [ngClass]="expenseList ? 'active' : '' ">
+                            <h2>{{'expense' | translate}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-8 col-lg-8 col-xl-9 main_content">
+            <div class="p-3 p-md-4">
+                <div class="" *ngIf="salesList">
+                    <div class="pageTitle pb-4">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-7 col-xl-7 pb-3 pb-md-0 d-flex align-items-center">
+                                <h1> {{'sales' | translate}} </h1>
+
+                                <!-- <button class="btn rounded-pill mx-3" type="button" (click)="reciept()">
+                                    {{'add_new' | translate}}
+                                </button> -->
+                            </div>
+
+                            <div class="col-12 col-md-5 col-xl-5 pb-2 pb-md-0">
+                                <div class="row g-3 align-items-center me-2">
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-8  end">
+                                        <form>
+                                            <div class="form-group search_box">
+                                                <div class="input_box d-flex align-items-center mb-0">
+                                                    <i class="material-symbols-rounded">
+                                                        search
+                                                    </i>
+                                                    <input type="search" class="form-control"
+                                                        placeholder="{{'search' | translate}}">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card tableCard">
+                        <div class="p-x-0">
+                            <div class="scroll-x">
+                                <table class="table customeTable align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center"> {{'order_num' | translate}} </th>
+                                            <th scope="col" class="text-start">{{'name' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'amount' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'items' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'table' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'payment' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'action' | translate}}</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00123
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Jimmy Taylor
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $120.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    2
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    T1
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Cash
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00124
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Peter Johnson
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $540.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    5
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    T5
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Cash
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00125
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Pamela Williamson
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $514.50
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    6
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    T6
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Credit Card
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00126
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Cassandra Haydon
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $189.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    2
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    TA
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Credit Card
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00127
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Samantha Smith
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $324.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    4
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    T4
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Cash
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00128
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Garry Hopeson
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $187.50
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    2
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    T1
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Cash
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    00129
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Kelly Williamson
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $126.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    2
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    T1
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    Credit Card
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a (click)="reciept()">
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            print
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="" *ngIf="expenseList">
+                    <div class="pageTitle pb-4">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-7 col-xl-7 pb-3 pb-md-0 d-flex align-items-center">
+                                <h1> {{'expense' | translate}} </h1>
+
+                                <button class="btn rounded-pill mx-3" type="button" (click)="addExpense()">
+                                    {{'add_new' | translate}}
+                                </button>
+                            </div>
+
+                            <div class=" col-12 col-md-5 col-xl-5 pb-2 pb-md-0">
+                                <div class="row g-3 align-items-center me-2">
+                                    <div class="col-12 col-md-12 col-lg-12 col-xl-8  end">
+                                        <form>
+                                            <div class="form-group search_box">
+                                                <div class="input_box d-flex align-items-center mb-0">
+                                                    <i class="material-symbols-rounded">
+                                                        search
+                                                    </i>
+                                                    <input type="search" class="form-control"
+                                                        placeholder="{{'search' | translate}}">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card tableCard">
+                        <div class="p-x-0">
+                            <div class="scroll-x">
+                                <table class="table customeTable align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center"> {{'category' | translate}} </th>
+                                            <th scope="col" class="text-start">{{'client' | translate}}</th>
+                                            <th scope="col" class="text-start">{{'reference_num' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'date' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'amount' | translate}}</th>
+                                            <th scope="col" class="text-center">{{'action' | translate}}</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Kitchen
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Opera Vegetables
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    VG24125
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    12 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $120.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Interior
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Xefora Paints
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    DS2145101
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    12 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $540.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Kitchen
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Opera Vegetables
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    RE88745
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    13 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $514.50
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Account
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Experts CA Agency
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    1225TR2
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    13 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $189.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Maintenance
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Williamson Pvt. Ltd.
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    ER21444
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    13 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $324.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Kitchen
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Opera Vegetables
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    OP21145
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    14 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $187.50
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="animate__animated animate__fadeInUp">
+                                            <td class="text-center">
+                                                <h3>
+                                                    Kitchen
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    <strong>
+                                                        Opera Vegetables
+                                                    </strong>
+                                                </h3>
+                                            </td>
+                                            <td class="text-start">
+                                                <h3>
+                                                    55645
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    14 June 2020
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3>
+                                                    $126.00
+                                                </h3>
+                                            </td>
+                                            <td class="text-center">
+                                                <h3 class="d-flex mx-auto">
+                                                    <a>
+                                                        <i class="material-symbols-rounded"
+                                                            style="color: var(--primary);">
+                                                            receipt
+                                                        </i>
+                                                    </a>
+                                                    <a>
+                                                        <i class="material-symbols-rounded" style="color:  #ff2d2d;">
+                                                            delete
+                                                        </i>
+                                                    </a>
+                                                    <a (click)="addExpense()">
+                                                        <i class="material-symbols-rounded" style="color:  #2abbff;">
+                                                            edit
+                                                        </i>
+                                                    </a>
+                                                </h3>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination-container">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-12 col-md-12 col-lg-4 pb-3">
+                            <h2 class="mx-auto mx-lg-0"> {{'showing' | translate}}
+                                1 {{'to' | translate}} 10 {{'of' | translate}} 126
+                                {{'itemss' | translate}}
+                            </h2>
+                        </div>
+
+                        <div class="col-12 col-md-12 col-lg-8 pb-3">
+                            <div class="row align-items-center">
+                                <form class="col-12 col-md-6 col-lg-8 d-flex pb-3 pb-md-0 ms-lg-auto">
+                                    <div class="form-group d-flex align-items-center mb-0 mx-auto m-md-0 ms-lg-auto">
+                                        <h2> {{'items_per_page' | translate}} </h2>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <ng-select [(ngModel)]="itemsPerPage" [ngModelOptions]="{standalone: true}">
+                                            <ng-option valur="10">10</ng-option>
+                                            <ng-option valur="15">15</ng-option>
+                                            <ng-option valur="20">20</ng-option>
+                                            <ng-option valur="20">25</ng-option>
+                                            <ng-option valur="30">30</ng-option>
+                                        </ng-select>
+                                    </div>
+                                </form>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <nav class="navigation" aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-end mb-0 mx-auto m-md-0 ms-lg-auto">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i
+                                                        class="zmdi zmdi-chevron-left"></i></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"><i
+                                                        class="zmdi zmdi-chevron-right"></i></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

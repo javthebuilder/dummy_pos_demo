@@ -1,0 +1,119 @@
+<div class="modelContainer">
+    <div class="modelContent">
+
+        <div class="pageTitle p-4 ">
+            <h1 class="d-flex pt-2 pb-3">
+                {{'add_expense' | translate}}
+            </h1>
+        </div>
+
+        <form class="pt-0 p-4">
+            <div class="form_inner">
+                <div class="row g-3 animate__animated animate__fadeInUp position-relative" style="z-index: 99;">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label>{{'select_date' | translate}}</label>
+                            <div class="input_box select_date d-flex align-items-center">
+                                <input type="date" class="form-control" #dateInput (change)="onDateChange($event)"
+                                    placeholder="{{'select_date' | translate}}" [value]="today">
+
+                                <i class="material-symbols-outlined text-end" (click)="dateInput.showPicker()">
+                                    calendar_month
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-group select_box">
+                            <label>{{'expense_type' | translate}}</label>
+                            <div class="input_box">
+                                <ng-select [(ngModel)]="expense_type" placeholder="{{'expense_type' | translate}}"
+                                    [ngModelOptions]="{standalone: true}">
+                                    <ng-option value="1">
+                                        Kitchen
+                                    </ng-option>
+                                    <ng-option value="2">
+                                        Interior
+                                    </ng-option>
+                                    <ng-option value="3">
+                                        Account
+                                    </ng-option>
+                                    <ng-option value="4">
+                                        Maintenance
+                                    </ng-option>
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group animate__animated animate__fadeInUp">
+                    <label>{{'client_name' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <input type="name" class="form-control" placeholder="{{'enter_client_name' | translate}}"
+                            value="Opera Vegetables ">
+                    </div>
+                </div>
+
+                <div class="row g-3 animate__animated animate__fadeInUp">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label>{{'enter_amount' | translate}} ({{'in' | translate}} $) </label>
+                            <div class="input_box d-flex align-items-center">
+                                <input type="text" class="form-control" placeholder="{{'enter_amount' | translate}}"
+                                    value="Opera Vegetables ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label>{{'reference_num' | translate}}</label>
+                            <div class="input_box d-flex align-items-center">
+                                <input type="name" class="form-control"
+                                    placeholder="{{'enter_reference_num' | translate}}" value="VG24125">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group upload_file">
+                    <label>{{'upload_invoice' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <h3>vegeinvoice.jpg </h3>
+
+                        <h4 class="end">
+                            {{'upload_file' | translate}}
+                            <input type="file" class="form-control" placeholder="{{'enter_amount' | translate}}"
+                                value="Opera Vegetables">
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>{{'note' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <input rows="2" class="form-control" placeholder="{{'add_note' | translate}}" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modelFooter">
+        <div class="row g-0">
+            <div class="col-6">
+                <button class="btn btn-lg  rounded-0 w-100" type="button" style="background: #ff4141 !important;"
+                    (click)="dismiss()">
+                    {{'cancel' | translate}}
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-lg  rounded-0 w-100" type="button">
+                    {{'add_expense' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="modelContainer">
+    <div class="modelContent">
+        <div class="pageTitle p-4 ">
+            <h1 class="d-flex pt-2 pb-3">
+                {{'add_people' | translate}}
+            </h1>
+        </div>
+
+        <form class="pt-0 p-4 pb-5">
+            <div class="form_inner">
+                <div class="form-group animate__animated animate__fadeInUp ">
+                    <label>{{'full_name' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <input type="name" class="form-control" placeholder="{{'enter_full_name' | translate}}"
+                            value="Rodriks Peterson">
+                    </div>
+                </div>
+
+                <div class="form-group animate__animated animate__fadeInUp ">
+                    <label>{{'phone_number' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <input type="tel" class="form-control" placeholder="{{'enter_phone_number' | translate}}"
+                            value="+1987 654 3210 ">
+                    </div>
+                </div>
+
+                <div class="form-group animate__animated animate__fadeInUp ">
+                    <label>{{'email_address' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <input type="tel" class="form-control" placeholder="{{'enter_email_address' | translate}}"
+                            value="rodrikspeterson@email.com">
+                    </div> 
+                </div>
+
+                <div class="form-group select_box animate__animated animate__fadeInUp">
+                    <label>{{'people_type' | translate}}</label>
+                    <div class="input_box d-flex align-items-center">
+                        <ng-select [(ngModel)]="people_type" placeholder="{{'choose_people_type' | translate}}"
+                            [ngModelOptions]="{standalone: true}">
+                            <ng-option value="1">
+                                {{'customers' | translate}} 
+                            </ng-option>
+                            <ng-option value="2">
+                                {{'waiters' | translate}}
+                            </ng-option>
+                            <ng-option value="3">
+                                {{'admins' | translate}}
+                            </ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modelFooter">
+        <div class="row g-0">
+            <div class="col-6">
+                <button class="btn btn-lg  rounded-0 w-100" type="button" style="background: #ff4141 !important;"
+                    (click)="dismiss()">
+                    {{'cancel' | translate}}
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-lg  rounded-0 w-100" type="button">
+                    {{'add_people' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

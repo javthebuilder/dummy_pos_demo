@@ -1,0 +1,78 @@
+.main_container {
+    background: url('../../assets/images/sign_in_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+
+    .card {
+        margin: auto;
+        width: fit-content;
+        max-width: calc(100% - 20px);
+        background: rgb(0 0 0 / 65%);
+        backdrop-filter: blur(12px);
+        padding: 20px 0px 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+
+        .logo_box {
+            img {
+                max-width: 270px;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        h2 {
+            color: var(--text-white);
+            font-size: 28px;
+            margin: 0;
+
+            small {
+                font-size: 15px;
+
+            }
+
+        }
+
+        h3 {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+
+            span {
+                text-transform: uppercase;
+                color: var(--primary);
+                cursor: pointer;
+            }
+        }
+
+        .backButton {
+            min-width: 45px;
+
+            a {
+                cursor: pointer;
+                display: block;
+
+                i {
+                    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+                    color: var(--text-white);
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50px;
+                    border: 1px solid var(--bg-white);
+                    text-align: center;
+                    min-width: 25px;
+                    font-size: 1.3rem;
+                    line-height: 23px;
+                }
+            }
+        }
+    }
+}
